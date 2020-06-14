@@ -18,7 +18,7 @@
 */
 
 int solution1(int X, int Y, int D) {
-    int p = X - Y;
+    int p = Y - X;
     if (p % D == 0)
         return (p / D);
     else
