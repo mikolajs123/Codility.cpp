@@ -20,9 +20,9 @@
 int solution1(int X, int Y, int D) {
     int p = Y - X;
     if (p % D == 0)
-        return (p / D);
+        return p / D;
     else
-        return (p / D + 1)
+        return p / D + 1;
 }
 
 #include <math.h>
