@@ -48,8 +48,8 @@ int solution2(vector<int> &A) {
   
     for(unsigned i = 0; i < A.size(); i++)
     {
-        unordered_map<int,int>::iterator res =  m.find(A[i]);
-        if( res != m.end() )
+        unordered_map<int,int>::iterator res = m.find(A[i]);
+        if(res != m.end())
         {
             res->second++;
         }
@@ -66,4 +66,22 @@ int solution2(vector<int> &A) {
         }
     }
     return 0;
+}
+
+#include <unordered_set>
+
+int solution3(vector<int> &A) {
+    unordered_set<int> s;
+    for(unsigned i = 0; i < A.size(); i++) {
+        unordered_set<int>::iterator res = s.find(A[i]);
+        if(res != s.end())
+        {
+            s.erase(A[i]);
+        }
+        else
+        {
+            s.insert(A[i]);
+        }
+    }
+    return *s.begin();
 }
