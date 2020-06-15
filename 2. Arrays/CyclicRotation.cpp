@@ -28,7 +28,7 @@
 #include <vector>
 
 vector<int> solution1(vector<int> &A, int K) {
-    if (A.size() == 0 || A.size() == 1)
+    if (A.size() < 2)
     {
         return A;
     }
