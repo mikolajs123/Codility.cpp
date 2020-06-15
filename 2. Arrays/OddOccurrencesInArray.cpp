@@ -40,3 +40,29 @@ int solution1(vector<int> &A) {
     }
     return 0; // should never happen only to mute compiler warning
 }
+
+#include <unordered_map>
+
+int solution2(vector<int> &A) {
+    unordered_map<int,int> m;
+  
+    for(unsigned i = 0; i < A.size(); i++){
+        unordered_map<int,int>::iterator res =  m.find(A[i]);
+        if( res != m.end() )
+        {
+            res->second++;
+        }
+        else
+        {
+            m.insert( {A[i], 1} );
+        }
+    }
+    for(auto i = m.begin(); i != m.end(); i++)
+    {
+        if(i->second % 2 != 0 )
+        {
+            return i->first;
+        }
+    }
+    return 0;
+}
