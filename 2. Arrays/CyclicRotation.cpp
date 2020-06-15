@@ -32,8 +32,8 @@ vector<int> solution1(vector<int> &A, int K) {
     {
         return A;
     }
-    K = K % A.size();
-    if (K == 0)
+    int N = K % A.size();
+    if (N == 0)
     {
         return A;
     }
@@ -45,8 +45,14 @@ vector<int> solution2(vector<int> &A, int K) {
     if (A.size() < 2)
         return A;
     
-    vector<int> rotated_vector(A.size());
+    int N = K % A.size();
+    if (N == 0)
+    {
+        return A;
+    }
     
+    vector<int> rotated_vector(A.size());
+   
     for (unsigned int i = 0; i < A.size(); i++)
     {
         rotated_vector[(i + K) % A.size()] = A[i];
