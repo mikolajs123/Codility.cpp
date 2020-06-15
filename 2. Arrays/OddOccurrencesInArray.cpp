@@ -46,7 +46,8 @@ int solution1(vector<int> &A) {
 int solution2(vector<int> &A) {
     unordered_map<int,int> m;
   
-    for(unsigned i = 0; i < A.size(); i++){
+    for(unsigned i = 0; i < A.size(); i++)
+    {
         unordered_map<int,int>::iterator res =  m.find(A[i]);
         if( res != m.end() )
         {
