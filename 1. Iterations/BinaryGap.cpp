@@ -22,11 +22,10 @@ int solution(int N) {
     } 
     // reverse the order
     reverse(binaryNum.begin(), binaryNum.end());
-    // printing binary array
+  
     int counter = 0, max_counter = 0;
     
     for(auto &w: binaryNum) {
-       // cout << w << endl;
        if (w == 1)
        {
            if (counter > max_counter)
