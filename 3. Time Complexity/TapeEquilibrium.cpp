@@ -29,3 +29,25 @@
   each element of array A is an integer within the range [−1,000..1,000].
 */
 
+#include <numeric> // accumulate
+#include <limits.h> // INT_MAX
+
+int solution1(vector<int> &A) {
+
+    int sum = accumulate(A.begin(), A.end(), 0);
+    int current = 0;
+    int min = INT_MAX;
+    
+    for (unsigned int i = 0; i < A.size() - 1; i++)
+    {
+        sum -= A[i];
+        current += A[i];
+        
+        int difference = abs(current - sum);
+        
+        if (difference < min)
+            min = difference;
+    }
+    
+    return min;
+}
